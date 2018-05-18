@@ -1,0 +1,12 @@
+language: python3
+sudo: enabled
+python:
+    - 3.6
+before_install:
+    - sudo apt-get install python3-pip
+    - pip3 install pylint flake8 pyflakes --user
+install:
+    - pip3 install --user -r requirements.txt
+script:
+    - flake8 *.py
+    - python3 -m unittest
