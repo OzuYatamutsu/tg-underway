@@ -1,0 +1,11 @@
+{{username}} {{status}}.
+({{time_notes}})
+
+{% for item in steps %}
+{% if item.completed %}
+✓ {{item.description}}
+{% else %}
+- {{item.description}}
+{% endif %}
+
+{% endfor %}
