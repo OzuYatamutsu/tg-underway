@@ -1,7 +1,8 @@
 from logger import log
 from config import API_KEY
 from handlers import (
-    on_command_start, on_command_help, on_message_text, on_inline_query
+    on_command_start, on_command_help, on_message_text, on_inline_query,
+    on_command_debug
 )
 from telegram.ext import (
     Updater, InlineQueryHandler, MessageHandler, CommandHandler, Filters
@@ -20,6 +21,7 @@ def start():
     # Register command handlers
     dp.add_handler(CommandHandler("start", on_command_start))
     dp.add_handler(CommandHandler("help", on_command_help))
+    dp.add_handler(CommandHandler("debug", on_command_debug))
 
     # Register text message handler
     dp.add_handler(MessageHandler(Filters.text, on_message_text))

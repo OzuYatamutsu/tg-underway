@@ -12,7 +12,7 @@ def log_cateify(func):
     def _log_wrapper(bot, update):
         username, user_id, query = get_meta_from_update(update)
 
-        log.debug('Cateifying: "{text}" from user {username} ({id})'.format(
+        log.debug('Processing: "{text}" from user {username} ({id})'.format(
             text=query, username=username, id=user_id
         ))
 

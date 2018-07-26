@@ -1,11 +1,5 @@
-{{username}} {{status}}.
+*{{username}}* {{status}}. ({{completion_percent}}% done)
 ({{time_notes}})
-
 {% for item in steps %}
-{% if item.completed %}
-✓ {{item.description}}
-{% else %}
-- {{item.description}}
-{% endif %}
-
+{% if item.completed %}✓ {{item.description}}{% else %}- {{item.description}}{% endif %}
 {% endfor %}
